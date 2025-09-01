@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "ESD_Diodes")(type "KiCad")(uri "${KIPRJMOD}/Custom_made/Symbols/ESD_Diodes/ESD_Diodes.kicad_sym")(options "")(descr ""))
-)

@@ -38,3 +38,5 @@ Remeber to make custom footprints
 - [ ] Learn about Control Systems
 - [ ] Learn about Control Systems for rockets
 - [ ] Check for the Op-Amp and mosfet trigger and continuity
+- [ ] Check for the automatic switch from battery to usb
+- [ ] Check for the reverse polarity circuit is working or not
