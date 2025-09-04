@@ -7,23 +7,27 @@ Remember to make custom symbols
 
 ## **Software**
 
-### Micro SD card
+### Micro SD card (SDIO)
 - [ ] integration testing
 - [ ] Driver code
 
-### ISM330DHCX IMU
+### SPI Flash (SPI)
+- [ ] integration testing
+- [ ] Driver code
+
+### ISM330DHCX IMU (SPI)(DMA)
 - [ ] Integration testing
 - [ ] Driver code
 
-### LIS2MDL magnetometer
+### LIS2MDL magnetometer (I2C)
 - [ ] integration testing
 - [ ] Driver code
 
-### NEO-6M GPS 
+### NEO-6M GPS (UART)
 - [ ] integration testing
 - [ ] Driver code
 
-### BMP280 barometer
+### BMP280 barometer (I2C)
 - [x] integration testing
 - [ ] Driver code
 
