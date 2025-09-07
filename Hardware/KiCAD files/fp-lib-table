@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "NEO-6M-GPS")(type "KiCad")(uri "${KIPRJMOD}/Import/NEO-6M-GPS.pretty")(options "")(descr ""))
+)
