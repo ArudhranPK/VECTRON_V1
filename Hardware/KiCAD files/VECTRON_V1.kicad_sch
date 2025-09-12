@@ -3973,216 +3973,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ESD_Diodes:ESD_DIODE"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 -0.635 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "ESD DIODE"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "esd "
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "ESD_DIODE_1_1"
-				(polyline
-					(pts
-						(xy -1.778 -2.54) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 -2.54) (xy -0.762 -1.778) (xy -1.016 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 -2.54) (xy -0.762 -3.302) (xy -0.508 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 -2.54) (xy -1.778 -1.778) (xy -1.778 -3.302) (xy -0.762 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy -0.762 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy 0.762 -1.778) (xy 0.508 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy 0.762 -3.302) (xy 1.016 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -2.54) (xy 1.778 -3.302) (xy 1.778 -1.778) (xy 0.762 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 1.778 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -3.81 -2.54 0)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 -2.54 180)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Jumper:SolderJumper_2_Open"
 			(pin_numbers
 				(hide yes)
@@ -9833,6 +9623,216 @@
 					(at 2.54 -5.08 90)
 					(length 2.54)
 					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "VECTRON_V1:ESD_DIODE"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 -0.635 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ESD DIODE"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "esd "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ESD_DIODE_1_1"
+				(polyline
+					(pts
+						(xy -1.778 -2.54) (xy -2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -2.54) (xy -0.762 -1.778) (xy -1.016 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -2.54) (xy -0.762 -3.302) (xy -0.508 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -2.54) (xy -1.778 -1.778) (xy -1.778 -3.302) (xy -0.762 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -2.54) (xy -0.762 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -2.54) (xy 0.762 -1.778) (xy 0.508 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -2.54) (xy 0.762 -3.302) (xy 1.016 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -2.54) (xy 1.778 -3.302) (xy 1.778 -1.778) (xy 0.762 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 -2.54 0)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 -2.54 180)
+					(length 1.27)
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -27724,7 +27724,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01498855-eef1-4088-9cb2-860260b2c75c")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR045"
 			(at 530.86 100.33 0)
 			(effects
 				(font
@@ -27774,7 +27774,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR044")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -27856,7 +27856,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0322bc10-d389-448c-8fab-cc71c4caaa32")
-		(property "Reference" "#PWR0108"
+		(property "Reference" "#PWR0109"
 			(at 22.86 241.3 0)
 			(effects
 				(font
@@ -27906,7 +27906,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0108")
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -27921,7 +27921,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "035db473-14e6-44a8-8ab7-6ee5315aa96e")
-		(property "Reference" "#PWR0106"
+		(property "Reference" "#PWR0107"
 			(at 539.75 236.22 0)
 			(effects
 				(font
@@ -27971,7 +27971,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0106")
+					(reference "#PWR0107")
 					(unit 1)
 				)
 			)
@@ -28124,7 +28124,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "03fc92e6-4d46-4a0c-a481-8af8bc21a341")
-		(property "Reference" "#PWR077"
+		(property "Reference" "#PWR078"
 			(at 41.91 179.07 0)
 			(effects
 				(font
@@ -28174,7 +28174,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR077")
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -28254,7 +28254,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "05b61482-e387-4ddb-a82a-97d5687b9759")
-		(property "Reference" "#PWR0104"
+		(property "Reference" "#PWR0105"
 			(at 363.22 228.6 0)
 			(effects
 				(font
@@ -28304,7 +28304,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0104")
+					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -28598,7 +28598,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "09feb96f-ddc1-4144-afd2-30b2256b7145")
-		(property "Reference" "#PWR0135"
+		(property "Reference" "#PWR0136"
 			(at 571.5 276.86 0)
 			(effects
 				(font
@@ -28648,7 +28648,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0135")
+					(reference "#PWR0136")
 					(unit 1)
 				)
 			)
@@ -28732,7 +28732,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c093194-bae7-410d-8afe-9afce3167799")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR076"
 			(at 29.21 179.07 0)
 			(effects
 				(font
@@ -28782,7 +28782,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR075")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -28797,7 +28797,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c158954-b867-41c3-bbbe-93bd11202aa3")
-		(property "Reference" "#PWR0142"
+		(property "Reference" "#PWR0143"
 			(at 77.47 288.29 0)
 			(effects
 				(font
@@ -28847,7 +28847,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0142")
+					(reference "#PWR0143")
 					(unit 1)
 				)
 			)
@@ -28929,7 +28929,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c36d130-9d60-4f9e-8d25-5adbf6585d8c")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR042"
 			(at 267.97 90.17 0)
 			(effects
 				(font
@@ -28979,7 +28979,7 @@
 		(instances
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR041")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -29404,7 +29404,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0fab7d37-9398-4748-9c6a-ed74a105c784")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR047"
 			(at 430.53 101.6 0)
 			(effects
 				(font
@@ -29454,7 +29454,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR046")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -29771,7 +29771,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1140cd8d-6410-4799-a232-44f9b1208060")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR071"
 			(at 307.34 161.29 0)
 			(effects
 				(font
@@ -29821,7 +29821,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR070")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -30176,7 +30176,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1383f378-0de7-493e-adde-8b6aca62dd59")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR039"
 			(at 99.06 90.17 0)
 			(effects
 				(font
@@ -30226,7 +30226,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR038")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -30306,7 +30306,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "14cca0b0-5161-42da-a7f6-5bab386b28cf")
-		(property "Reference" "#PWR0121"
+		(property "Reference" "#PWR0122"
 			(at 269.24 259.08 0)
 			(effects
 				(font
@@ -30356,7 +30356,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0121")
+					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -30436,7 +30436,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "157552a3-65b8-4965-b7f0-825c43dd233d")
-		(property "Reference" "#PWR092"
+		(property "Reference" "#PWR093"
 			(at 363.22 213.36 0)
 			(effects
 				(font
@@ -30486,7 +30486,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR092")
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -30501,7 +30501,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "161f6f24-684c-4fb2-a8e2-f4eee8e2d0d3")
-		(property "Reference" "#PWR0143"
+		(property "Reference" "#PWR0144"
 			(at 121.92 292.1 0)
 			(effects
 				(font
@@ -30551,7 +30551,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0143")
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -30566,7 +30566,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "16857e99-5101-4a95-9b3a-ad207603eb90")
-		(property "Reference" "#PWR097"
+		(property "Reference" "#PWR098"
 			(at 41.91 223.52 0)
 			(effects
 				(font
@@ -30616,7 +30616,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR097")
+					(reference "#PWR098")
 					(unit 1)
 				)
 			)
@@ -30702,7 +30702,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "17f69e2d-f42e-40e1-8ef7-c3f86655eadb")
-		(property "Reference" "#PWR0119"
+		(property "Reference" "#PWR0120"
 			(at 207.01 259.08 0)
 			(effects
 				(font
@@ -30752,7 +30752,7 @@
 		(instances
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0119")
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
@@ -30768,7 +30768,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "18d6fc7b-656a-47d9-b6a8-de45d488ed68")
-		(property "Reference" "#PWR0162"
+		(property "Reference" "#PWR0163"
 			(at 58.42 323.85 0)
 			(effects
 				(font
@@ -30818,7 +30818,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0162")
+					(reference "#PWR0163")
 					(unit 1)
 				)
 			)
@@ -30902,7 +30902,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "19b24e89-b79d-481a-a2ad-b1eecb13f1d5")
-		(property "Reference" "#PWR0167"
+		(property "Reference" "#PWR0170"
 			(at 461.01 340.36 0)
 			(effects
 				(font
@@ -30952,7 +30952,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0167")
+					(reference "#PWR0170")
 					(unit 1)
 				)
 			)
@@ -31331,7 +31331,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c9c7105-0dd5-408b-86fc-495b1c0b2e8b")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR060"
 			(at 148.59 134.62 0)
 			(effects
 				(font
@@ -31381,7 +31381,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR059")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -31397,7 +31397,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d8b6a93-9ff9-46a4-a5a0-ed5a0a76756d")
-		(property "Reference" "#PWR0157"
+		(property "Reference" "#PWR0158"
 			(at 488.95 318.77 0)
 			(effects
 				(font
@@ -31447,7 +31447,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0157")
+					(reference "#PWR0158")
 					(unit 1)
 				)
 			)
@@ -31462,7 +31462,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1db1a568-7daf-4f9a-9acf-70cca57b7b71")
-		(property "Reference" "#PWR0155"
+		(property "Reference" "#PWR0156"
 			(at 142.24 304.8 0)
 			(effects
 				(font
@@ -31512,7 +31512,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0155")
+					(reference "#PWR0156")
 					(unit 1)
 				)
 			)
@@ -31597,7 +31597,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1f9051e2-3fea-49e6-931c-48426d01e99b")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR0135"
 			(at 492.76 276.86 0)
 			(effects
 				(font
@@ -31647,7 +31647,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0134")
+					(reference "#PWR0135")
 					(unit 1)
 				)
 			)
@@ -31800,7 +31800,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1fec2c08-fc74-4f3c-9445-0e8db5df062e")
-		(property "Reference" "#PWR0168"
+		(property "Reference" "#PWR0171"
 			(at 539.75 340.36 0)
 			(effects
 				(font
@@ -31850,7 +31850,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0168")
+					(reference "#PWR0171")
 					(unit 1)
 				)
 			)
@@ -31932,7 +31932,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2239f563-2b56-4f58-bf01-1754d45e49c8")
-		(property "Reference" "#PWR0145"
+		(property "Reference" "#PWR0146"
 			(at 492.76 292.1 0)
 			(effects
 				(font
@@ -31982,7 +31982,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0145")
+					(reference "#PWR0146")
 					(unit 1)
 				)
 			)
@@ -32135,7 +32135,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "22b19fc6-281f-4cc3-ac89-d153c8193835")
-		(property "Reference" "#PWR096"
+		(property "Reference" "#PWR097"
 			(at 35.56 223.52 0)
 			(effects
 				(font
@@ -32185,7 +32185,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR096")
+					(reference "#PWR097")
 					(unit 1)
 				)
 			)
@@ -32342,7 +32342,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23dad889-5af9-4edc-8689-3548d364d98b")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR044"
 			(at 530.86 90.17 0)
 			(effects
 				(font
@@ -32392,7 +32392,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR043")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -32407,7 +32407,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "242b28c7-21af-4395-91cd-d57fc5b8686d")
-		(property "Reference" "#PWR087"
+		(property "Reference" "#PWR088"
 			(at 148.59 198.12 0)
 			(effects
 				(font
@@ -32457,7 +32457,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR087")
+					(reference "#PWR088")
 					(unit 1)
 				)
 			)
@@ -32472,7 +32472,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "255f6426-1a03-4014-8680-29537a136da0")
-		(property "Reference" "#PWR0131"
+		(property "Reference" "#PWR0132"
 			(at 86.36 267.97 0)
 			(effects
 				(font
@@ -32522,74 +32522,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0131")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 476.25 322.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2585a591-4da3-4110-8a92-6f8fabd1795d")
-		(property "Reference" "D11"
-			(at 476.25 323.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SLESD5Z5C"
-			(at 476.25 327.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 476.25 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 476.25 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 476.25 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d72e39f1-f8d1-48c1-bf07-01e26faa4d08")
-		)
-		(pin "1"
-			(uuid "a6c9421f-d020-4e1a-8d1b-6e9210ee95cc")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D11")
+					(reference "#PWR0132")
 					(unit 1)
 				)
 			)
@@ -32877,7 +32810,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2aaa5a01-f0fb-4e7b-815f-2a837e0771d5")
-		(property "Reference" "#PWR0103"
+		(property "Reference" "#PWR0104"
 			(at 304.8 228.6 0)
 			(effects
 				(font
@@ -32927,7 +32860,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0103")
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -33290,7 +33223,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2d7d0d3d-b108-449b-8a14-9549d43bf921")
-		(property "Reference" "#PWR0166"
+		(property "Reference" "#PWR0169"
 			(at 146.05 330.2 0)
 			(effects
 				(font
@@ -33340,7 +33273,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0166")
+					(reference "#PWR0169")
 					(unit 1)
 				)
 			)
@@ -33355,7 +33288,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2e9f95b8-31ee-4108-9195-e3a7b167a351")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR059"
 			(at 114.3 134.62 0)
 			(effects
 				(font
@@ -33405,7 +33338,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR058")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -33475,6 +33408,73 @@
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
 					(reference "R61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 554.99 328.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ed1c3e0-1edd-4360-b82b-3f3873fa279d")
+		(property "Reference" "D14"
+			(at 554.99 329.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PESD5V0U1BB"
+			(at 554.99 334.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 554.99 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 554.99 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 554.99 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c3b8b884-2524-4753-a873-a30a7caf0fc8")
+		)
+		(pin "2"
+			(uuid "ec58f736-6d37-454b-8146-568d8cc8b484")
+		)
+		(instances
+			(project "VECTRON_V1"
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -33657,7 +33657,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f66b439-42ec-4c3a-bbbf-4369f4a26d02")
-		(property "Reference" "#PWR0164"
+		(property "Reference" "#PWR0165"
 			(at 83.82 323.85 0)
 			(effects
 				(font
@@ -33707,7 +33707,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0164")
+					(reference "#PWR0165")
 					(unit 1)
 				)
 			)
@@ -33722,7 +33722,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2fcdb75a-a1e6-417f-b26e-35ade55e21c9")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR070"
 			(at 148.59 153.67 0)
 			(effects
 				(font
@@ -33772,7 +33772,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR069")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -33787,7 +33787,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "301e5193-9724-4fd1-91ed-3fd2d542c7cf")
-		(property "Reference" "#PWR0112"
+		(property "Reference" "#PWR0113"
 			(at 269.24 245.11 0)
 			(effects
 				(font
@@ -33837,7 +33837,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0112")
+					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -33852,7 +33852,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3080024b-44d2-46de-a16f-745123864d72")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR077"
 			(at 35.56 179.07 0)
 			(effects
 				(font
@@ -33902,7 +33902,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR076")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -34189,7 +34189,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "31afdae3-6583-41c0-b747-a1d14f368496")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR0115"
 			(at 335.28 245.11 0)
 			(effects
 				(font
@@ -34239,7 +34239,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0114")
+					(reference "#PWR0115")
 					(unit 1)
 				)
 			)
@@ -34254,7 +34254,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3245173c-09a1-4d3c-bb5a-a55dc2dd088e")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR058"
 			(at 86.36 134.62 0)
 			(effects
 				(font
@@ -34304,7 +34304,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR057")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -34598,7 +34598,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3537b7e4-954a-4dd1-873e-baa30da57457")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR0110"
 			(at 148.59 242.57 0)
 			(effects
 				(font
@@ -34648,7 +34648,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0109")
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -35281,7 +35281,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c0e512f-8093-48c5-9621-d1156c9dfc9c")
-		(property "Reference" "#PWR094"
+		(property "Reference" "#PWR095"
 			(at 22.86 223.52 0)
 			(effects
 				(font
@@ -35331,7 +35331,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR094")
+					(reference "#PWR095")
 					(unit 1)
 				)
 			)
@@ -35346,7 +35346,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c8460bc-303d-4e47-a215-6ced180975e2")
-		(property "Reference" "#PWR0147"
+		(property "Reference" "#PWR0148"
 			(at 571.5 292.1 0)
 			(effects
 				(font
@@ -35396,7 +35396,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0147")
+					(reference "#PWR0148")
 					(unit 1)
 				)
 			)
@@ -35480,7 +35480,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3d5eb04e-6fd3-4b58-a392-1281853d6343")
-		(property "Reference" "#PWR0101"
+		(property "Reference" "#PWR0102"
 			(at 576.58 224.79 0)
 			(effects
 				(font
@@ -35530,7 +35530,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0101")
+					(reference "#PWR0102")
 					(unit 1)
 				)
 			)
@@ -35545,7 +35545,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3de3685e-340b-49f7-ae8e-866752a4b28c")
-		(property "Reference" "#PWR0144"
+		(property "Reference" "#PWR0145"
 			(at 476.25 292.1 0)
 			(effects
 				(font
@@ -35595,7 +35595,7 @@
 		(instances
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0144")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -36069,7 +36069,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "424ed711-abfe-4f9f-bf91-01298d5bc99c")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0134"
 			(at 148.59 267.97 0)
 			(effects
 				(font
@@ -36119,7 +36119,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0133")
+					(reference "#PWR0134")
 					(unit 1)
 				)
 			)
@@ -36270,7 +36270,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "461b33da-1d23-44cb-a84c-5660a9fd7b7d")
-		(property "Reference" "#PWR0165"
+		(property "Reference" "#PWR0166"
 			(at 96.52 323.85 0)
 			(effects
 				(font
@@ -36320,7 +36320,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0165")
+					(reference "#PWR0166")
 					(unit 1)
 				)
 			)
@@ -36470,7 +36470,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "476c702d-ab9f-43a9-8879-8cde82736a27")
-		(property "Reference" "#PWR0170"
+		(property "Reference" "#PWR0167"
 			(at 109.22 323.85 0)
 			(effects
 				(font
@@ -36520,7 +36520,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0170")
+					(reference "#PWR0167")
 					(unit 1)
 				)
 			)
@@ -36984,7 +36984,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4ca0ad27-f75a-46ba-9a8d-e4ceb5606b21")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR048"
 			(at 22.86 107.95 0)
 			(effects
 				(font
@@ -37034,7 +37034,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR047")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -37106,73 +37106,6 @@
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
 					(reference "J11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 554.99 328.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4db2bfcd-b663-4c0d-8ca4-137de079f26d")
-		(property "Reference" "D14"
-			(at 554.99 329.565 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PESD5V0U1BB"
-			(at 554.99 334.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 554.99 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 554.99 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 554.99 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "924ea983-2ddf-45b3-919f-873017591dbd")
-		)
-		(pin "1"
-			(uuid "e054afa6-dfbe-46d3-8fd7-a4985a8bce2c")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -37467,7 +37400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5020e71c-bcfe-4ceb-b598-f4671d55c06c")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR053"
 			(at 354.33 133.35 0)
 			(effects
 				(font
@@ -37517,7 +37450,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR052")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -37601,7 +37534,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5127b409-adb5-4af0-923a-26af5a51bcde")
-		(property "Reference" "#PWR0137"
+		(property "Reference" "#PWR0138"
 			(at 472.44 280.67 0)
 			(effects
 				(font
@@ -37651,7 +37584,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0137")
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -37733,7 +37666,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "543dcb77-b30f-4e51-9e25-b08955bf6d9f")
-		(property "Reference" "#PWR0139"
+		(property "Reference" "#PWR0140"
 			(at 149.86 281.94 0)
 			(effects
 				(font
@@ -37783,7 +37716,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0139")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -37866,7 +37799,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "55b201c6-f76d-466b-8965-3330222e6080")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR065"
 			(at 532.13 154.94 0)
 			(effects
 				(font
@@ -37916,7 +37849,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR064")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -37931,7 +37864,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5650cbd8-82c1-4190-b8ca-be7e07cfc60b")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR061"
 			(at 280.67 138.43 0)
 			(effects
 				(font
@@ -37981,7 +37914,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR060")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -37996,7 +37929,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "568d59e5-0035-4710-af68-17fd76b5657a")
-		(property "Reference" "#PWR0125"
+		(property "Reference" "#PWR0126"
 			(at 558.8 259.08 0)
 			(effects
 				(font
@@ -38046,7 +37979,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0125")
+					(reference "#PWR0126")
 					(unit 1)
 				)
 			)
@@ -38195,7 +38128,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "58da4d10-64b3-433c-b8f9-aaacdb0b3d2b")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR072"
 			(at 255.27 163.83 0)
 			(effects
 				(font
@@ -38245,7 +38178,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR071")
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -38260,7 +38193,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "593fb258-354a-4fd1-974c-03fd35e14d34")
-		(property "Reference" "#FLG09"
+		(property "Reference" "#FLG010"
 			(at 121.92 325.755 0)
 			(effects
 				(font
@@ -38310,7 +38243,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#FLG09")
+					(reference "#FLG010")
 					(unit 1)
 				)
 			)
@@ -38530,7 +38463,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b7339c5-e741-4e02-926f-f472033d3bc3")
-		(property "Reference" "#PWR0130"
+		(property "Reference" "#PWR0131"
 			(at 41.91 267.97 0)
 			(effects
 				(font
@@ -38580,7 +38513,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0130")
+					(reference "#PWR0131")
 					(unit 1)
 				)
 			)
@@ -38596,7 +38529,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b827de1-18aa-46ef-9c91-78bcb3ae953e")
-		(property "Reference" "#PWR0158"
+		(property "Reference" "#PWR0159"
 			(at 567.69 318.77 0)
 			(effects
 				(font
@@ -38646,7 +38579,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0158")
+					(reference "#PWR0159")
 					(unit 1)
 				)
 			)
@@ -38661,7 +38594,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5c108db2-26ff-47c2-8e57-856cdd0c2172")
-		(property "Reference" "#PWR0118"
+		(property "Reference" "#PWR0119"
 			(at 530.86 251.46 0)
 			(effects
 				(font
@@ -38711,7 +38644,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0118")
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -39003,7 +38936,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60390cc7-5bb5-40bc-8bdb-c7f4ca91363b")
-		(property "Reference" "#PWR0123"
+		(property "Reference" "#PWR0124"
 			(at 335.28 259.08 0)
 			(effects
 				(font
@@ -39053,7 +38986,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0123")
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
@@ -39137,7 +39070,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "61116b87-10f4-4602-9014-a11d1bcbe9af")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR063"
 			(at 280.67 153.67 0)
 			(effects
 				(font
@@ -39187,7 +39120,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR062")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -39403,7 +39336,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "61f30e41-7628-4fcf-a497-eb67dabbc6b9")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR066"
 			(at 541.02 154.94 0)
 			(effects
 				(font
@@ -39453,7 +39386,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR065")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -39469,7 +39402,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6216ad7e-c03f-45a5-bb5a-4c453f4ed2f5")
-		(property "Reference" "#PWR0163"
+		(property "Reference" "#PWR0164"
 			(at 71.12 323.85 0)
 			(effects
 				(font
@@ -39519,7 +39452,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0163")
+					(reference "#PWR0164")
 					(unit 1)
 				)
 			)
@@ -39603,7 +39536,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62e6a96c-f82c-49d5-b0d5-dc5cf0532fdf")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR090"
 			(at 544.83 209.55 0)
 			(effects
 				(font
@@ -39653,7 +39586,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR089")
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -39868,7 +39801,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "654fa21a-dcbd-4cc7-baf5-ad09c6c31f2a")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR082"
 			(at 372.11 176.53 0)
 			(effects
 				(font
@@ -39918,7 +39851,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR081")
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -39933,7 +39866,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "66369a65-e18f-44a4-9c8a-51300ac7d760")
-		(property "Reference" "#PWR0128"
+		(property "Reference" "#PWR0129"
 			(at 29.21 267.97 0)
 			(effects
 				(font
@@ -39983,7 +39916,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0128")
+					(reference "#PWR0129")
 					(unit 1)
 				)
 			)
@@ -40061,73 +39994,6 @@
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
 					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 554.99 316.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "668e062b-2929-43ea-bbeb-75c1f3dce9ab")
-		(property "Reference" "D10"
-			(at 554.99 316.865 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PESD5V0U1BB"
-			(at 554.99 321.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 554.99 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 554.99 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 554.99 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "96327036-dc79-4606-9173-6634f57d88a2")
-		)
-		(pin "1"
-			(uuid "981da7b4-fd38-4653-9bcc-ec40a5a5f438")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -40282,7 +40148,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "68b856d6-ed34-4d0f-ac20-04b3346f87ca")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR043"
 			(at 281.94 88.9 0)
 			(effects
 				(font
@@ -40332,7 +40198,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR042")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -40347,7 +40213,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "68d6756a-c42f-42a6-a6a2-b66054672a0f")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR046"
 			(at 281.94 104.14 0)
 			(effects
 				(font
@@ -40397,7 +40263,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR045")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -40481,7 +40347,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6a53accc-d59f-4e1f-ba72-8915cd54a35b")
-		(property "Reference" "#PWR0169"
+		(property "Reference" "#PWR0168"
 			(at 121.92 323.85 0)
 			(effects
 				(font
@@ -40531,7 +40397,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0169")
+					(reference "#PWR0168")
 					(unit 1)
 				)
 			)
@@ -40617,7 +40483,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6b7ea018-792f-4a98-8283-18bb1a566ff4")
-		(property "Reference" "#PWR0149"
+		(property "Reference" "#PWR0150"
 			(at 259.08 294.64 0)
 			(effects
 				(font
@@ -40667,7 +40533,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0149")
+					(reference "#PWR0150")
 					(unit 1)
 				)
 			)
@@ -40682,7 +40548,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6bf1b4fe-7bb1-4fbe-9add-7d6aecdad9ba")
-		(property "Reference" "#PWR0102"
+		(property "Reference" "#PWR0103"
 			(at 198.12 228.6 0)
 			(effects
 				(font
@@ -40732,7 +40598,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0102")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -40882,7 +40748,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6eae52c5-15aa-473c-9b78-78961b20a695")
-		(property "Reference" "#PWR0151"
+		(property "Reference" "#PWR0152"
 			(at 330.2 294.64 0)
 			(effects
 				(font
@@ -40932,7 +40798,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0151")
+					(reference "#PWR0152")
 					(unit 1)
 				)
 			)
@@ -41387,7 +41253,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77b87fc2-9457-43b0-8ecf-d9dedcc2930a")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR038"
 			(at 48.26 90.17 0)
 			(effects
 				(font
@@ -41437,7 +41303,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR037")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -41521,7 +41387,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7a1e2fec-0978-4651-a2c1-aeb6e3c72775")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR062"
 			(at 307.34 146.05 0)
 			(effects
 				(font
@@ -41571,7 +41437,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR061")
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -42004,7 +41870,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7c54c420-23c0-449b-bb1e-7fc5f1bf987d")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR087"
 			(at 323.85 196.85 0)
 			(effects
 				(font
@@ -42054,7 +41920,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR086")
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -42276,7 +42142,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7f277b9d-8f94-438a-b328-e29e9e73f43a")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR081"
 			(at 148.59 179.07 0)
 			(effects
 				(font
@@ -42326,7 +42192,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR080")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -42410,7 +42276,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8102051e-0460-4390-9756-df2d02375e1e")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR094"
 			(at 443.23 218.44 0)
 			(effects
 				(font
@@ -42460,7 +42326,7 @@
 		(instances
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR093")
+					(reference "#PWR094")
 					(unit 1)
 				)
 			)
@@ -42758,7 +42624,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "862e5d64-3097-4129-831d-fd3b4537d584")
-		(property "Reference" "#PWR0100"
+		(property "Reference" "#PWR0101"
 			(at 148.59 223.52 0)
 			(effects
 				(font
@@ -42808,7 +42674,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0100")
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -43112,7 +42978,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "885bd811-8e8a-4aa9-bbf3-57eb9907c5e4")
-		(property "Reference" "#PWR0120"
+		(property "Reference" "#PWR0121"
 			(at 238.76 259.08 0)
 			(effects
 				(font
@@ -43162,7 +43028,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0120")
+					(reference "#PWR0121")
 					(unit 1)
 				)
 			)
@@ -43513,7 +43379,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8af980cd-065e-4cfb-8efb-76acec66270b")
-		(property "Reference" "#PWR0105"
+		(property "Reference" "#PWR0106"
 			(at 477.52 232.41 0)
 			(effects
 				(font
@@ -43563,7 +43429,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0105")
+					(reference "#PWR0106")
 					(unit 1)
 				)
 			)
@@ -43647,7 +43513,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b65adc3-1ee5-48c0-96db-90ab8bce5e4b")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR052"
 			(at 255.27 128.27 0)
 			(effects
 				(font
@@ -43697,7 +43563,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR051")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -44382,73 +44248,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 476.25 328.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "90aed4aa-a158-48ea-a8b9-ca34b15c2050")
-		(property "Reference" "D13"
-			(at 476.25 329.565 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SLESD5Z5C"
-			(at 476.25 334.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 476.25 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 476.25 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 476.25 328.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "accb1f38-4071-4504-a10b-bb4909ab1e48")
-		)
-		(pin "1"
-			(uuid "e4923164-7498-43c3-9dd3-26d680cd93ba")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 488.95 279.4 180)
 		(unit 1)
@@ -44526,7 +44325,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91c62066-188c-4842-a757-e377c1e66e61")
-		(property "Reference" "#PWR0127"
+		(property "Reference" "#PWR0128"
 			(at 22.86 267.97 0)
 			(effects
 				(font
@@ -44576,7 +44375,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0127")
+					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
@@ -44591,7 +44390,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "92054c8b-ad08-4924-afa0-7fc8aee0306b")
-		(property "Reference" "#PWR0159"
+		(property "Reference" "#PWR0160"
 			(at 20.32 323.85 0)
 			(effects
 				(font
@@ -44641,7 +44440,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0159")
+					(reference "#PWR0160")
 					(unit 1)
 				)
 			)
@@ -44723,7 +44522,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "92b5640f-bac7-4189-bae6-0eedcea3b7ca")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR050"
 			(at 375.92 113.03 0)
 			(effects
 				(font
@@ -44773,7 +44572,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR049")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -44788,7 +44587,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "932a76c6-d044-4d60-b286-6a6f824c797a")
-		(property "Reference" "#PWR088"
+		(property "Reference" "#PWR089"
 			(at 372.11 203.2 0)
 			(effects
 				(font
@@ -44838,7 +44637,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR088")
+					(reference "#PWR089")
 					(unit 1)
 				)
 			)
@@ -44922,7 +44721,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9485a5b4-8e8f-48e3-a280-de8aa40c10ed")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR054"
 			(at 22.86 134.62 0)
 			(effects
 				(font
@@ -44972,7 +44771,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR053")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -45278,7 +45077,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "97444d6b-a74a-491f-8f67-7751a34b1f0a")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR074"
 			(at 544.83 167.64 0)
 			(effects
 				(font
@@ -45328,7 +45127,74 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR073")
+					(reference "#PWR074")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 554.99 316.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9758ef9b-5c6d-4162-9e5d-a7b59672f723")
+		(property "Reference" "D10"
+			(at 554.99 316.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PESD5V0U1BB"
+			(at 554.99 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 554.99 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 554.99 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 554.99 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c45c85c-32cc-4061-a4de-d50f856b5598")
+		)
+		(pin "2"
+			(uuid "f5eb7bf0-e21e-460d-9758-32a4da553ee0")
+		)
+		(instances
+			(project ""
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -45576,6 +45442,73 @@
 		)
 	)
 	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 476.25 322.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "97c7ac0d-42e2-4a53-b118-9a2a0fbfae0c")
+		(property "Reference" "D11"
+			(at 476.25 323.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SLESD5Z5C"
+			(at 476.25 327.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 476.25 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 476.25 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 476.25 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d7a1b27-28c4-480e-9b39-e39312f05bef")
+		)
+		(pin "2"
+			(uuid "f71db342-f777-432c-8641-d0e79466a3ab")
+		)
+		(instances
+			(project "VECTRON_V1"
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 241.3 83.82 90)
 		(unit 1)
@@ -45651,7 +45584,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9a968138-df21-45ad-af10-ce0a2a366711")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR057"
 			(at 41.91 134.62 0)
 			(effects
 				(font
@@ -45701,7 +45634,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR056")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -45716,7 +45649,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9aafb931-5d2b-4a2f-9c37-52d01e88d3d8")
-		(property "Reference" "#PWR0124"
+		(property "Reference" "#PWR0125"
 			(at 369.57 259.08 0)
 			(effects
 				(font
@@ -45766,7 +45699,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0124")
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -45847,7 +45780,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bb19548-f7bb-4188-b68d-c17c98ca1ae6")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR073"
 			(at 378.46 163.83 0)
 			(effects
 				(font
@@ -45897,7 +45830,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR072")
+					(reference "#PWR073")
 					(unit 1)
 				)
 			)
@@ -45912,7 +45845,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bcf27f4-87b8-40d0-9071-d60c3bf959ed")
-		(property "Reference" "#PWR085"
+		(property "Reference" "#PWR086"
 			(at 22.86 196.85 0)
 			(effects
 				(font
@@ -45962,7 +45895,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR085")
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -46320,7 +46253,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a08c9904-aa17-445d-8878-bbde34fd74ef")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR091"
 			(at 553.72 209.55 0)
 			(effects
 				(font
@@ -46370,7 +46303,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR090")
+					(reference "#PWR091")
 					(unit 1)
 				)
 			)
@@ -46635,7 +46568,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a48e889a-20eb-43da-a099-02d45564c92c")
-		(property "Reference" "#PWR0150"
+		(property "Reference" "#PWR0151"
 			(at 300.99 294.64 0)
 			(effects
 				(font
@@ -46685,7 +46618,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0150")
+					(reference "#PWR0151")
 					(unit 1)
 				)
 			)
@@ -46879,7 +46812,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a50c823f-a670-40a7-b4d7-c2d2d625cef4")
-		(property "Reference" "#PWR0115"
+		(property "Reference" "#PWR0116"
 			(at 369.57 245.11 0)
 			(effects
 				(font
@@ -46929,7 +46862,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0115")
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)
@@ -47812,7 +47745,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aab6e617-dfbe-48de-bc8c-ab9177f31f28")
-		(property "Reference" "#PWR0148"
+		(property "Reference" "#PWR0149"
 			(at 214.63 294.64 0)
 			(effects
 				(font
@@ -47862,7 +47795,7 @@
 		(instances
 			(project ""
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0148")
+					(reference "#PWR0149")
 					(unit 1)
 				)
 			)
@@ -48137,6 +48070,73 @@
 		)
 	)
 	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 476.25 328.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "abdf3ca2-c66f-430d-99db-12c0714557de")
+		(property "Reference" "D13"
+			(at 476.25 329.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SLESD5Z5C"
+			(at 476.25 334.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 476.25 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 476.25 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 476.25 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f39dba42-e04f-4e37-b891-949df51541d9")
+		)
+		(pin "2"
+			(uuid "486902d1-71cd-469c-a349-2cad62e8ee0f")
+		)
+		(instances
+			(project "VECTRON_V1"
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 149.86 298.45 0)
 		(unit 1)
@@ -48145,7 +48145,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "abef93e1-1e11-4442-ac2f-2257157ee5b9")
-		(property "Reference" "#PWR0156"
+		(property "Reference" "#PWR0157"
 			(at 149.86 304.8 0)
 			(effects
 				(font
@@ -48195,7 +48195,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0156")
+					(reference "#PWR0157")
 					(unit 1)
 				)
 			)
@@ -48613,7 +48613,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "adf082ba-fe36-436c-83f7-fb2312d9dd11")
-		(property "Reference" "#PWR084"
+		(property "Reference" "#PWR085"
 			(at 575.31 194.31 0)
 			(effects
 				(font
@@ -48663,7 +48663,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR084")
+					(reference "#PWR085")
 					(unit 1)
 				)
 			)
@@ -48812,7 +48812,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "af00e878-5e16-4403-a1fe-7af071cb6279")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0137"
 			(at 330.2 280.67 0)
 			(effects
 				(font
@@ -48862,7 +48862,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0136")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -49418,7 +49418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b60b7db2-0e4b-440f-aafc-dea2662c84b8")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0114"
 			(at 299.72 245.11 0)
 			(effects
 				(font
@@ -49468,7 +49468,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0113")
+					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -49615,7 +49615,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b81cc551-d269-43f5-b992-26e69db3be13")
-		(property "Reference" "#PWR0160"
+		(property "Reference" "#PWR0161"
 			(at 33.02 323.85 0)
 			(effects
 				(font
@@ -49665,7 +49665,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0160")
+					(reference "#PWR0161")
 					(unit 1)
 				)
 			)
@@ -49680,7 +49680,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b88665ae-08b9-4aa2-9584-5dc8fbf7ec36")
-		(property "Reference" "#PWR0171"
+		(property "Reference" "#PWR037"
 			(at 375.92 87.63 0)
 			(effects
 				(font
@@ -49730,7 +49730,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0171")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -49745,7 +49745,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b90db601-d085-49f8-8cc0-377153dbf56d")
-		(property "Reference" "#PWR0111"
+		(property "Reference" "#PWR0112"
 			(at 238.76 245.11 0)
 			(effects
 				(font
@@ -49795,7 +49795,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0111")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
@@ -50015,7 +50015,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc4f3960-3fff-41ac-a1da-608bcb7bcfae")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR049"
 			(at 148.59 109.22 0)
 			(effects
 				(font
@@ -50065,7 +50065,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR048")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -50080,7 +50080,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc6aab10-1929-49b6-a0a4-aaf2a878fe71")
-		(property "Reference" "#PWR095"
+		(property "Reference" "#PWR096"
 			(at 29.21 223.52 0)
 			(effects
 				(font
@@ -50130,7 +50130,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR095")
+					(reference "#PWR096")
 					(unit 1)
 				)
 			)
@@ -50348,7 +50348,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bd7ae4c2-0dce-4b6e-8a12-1a15950a7389")
-		(property "Reference" "#PWR0129"
+		(property "Reference" "#PWR0130"
 			(at 35.56 267.97 0)
 			(effects
 				(font
@@ -50398,7 +50398,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0129")
+					(reference "#PWR0130")
 					(unit 1)
 				)
 			)
@@ -50683,7 +50683,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bf3d22c3-e9ef-477e-b0cc-57ad329ea29a")
-		(property "Reference" "#PWR0152"
+		(property "Reference" "#PWR0153"
 			(at 92.71 297.18 0)
 			(effects
 				(font
@@ -50733,7 +50733,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0152")
+					(reference "#PWR0153")
 					(unit 1)
 				)
 			)
@@ -50748,7 +50748,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bfd64462-0e06-40cf-8cad-9d122ab47842")
-		(property "Reference" "#PWR079"
+		(property "Reference" "#PWR080"
 			(at 114.3 179.07 0)
 			(effects
 				(font
@@ -50798,7 +50798,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR079")
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -51358,7 +51358,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c50c462b-890a-4070-9c01-741ab3f188a1")
-		(property "Reference" "#PWR0116"
+		(property "Reference" "#PWR0117"
 			(at 430.53 250.19 0)
 			(effects
 				(font
@@ -51408,74 +51408,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 476.25 316.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c515a69d-66d9-4129-a1eb-67df8d9019ee")
-		(property "Reference" "D9"
-			(at 476.25 316.865 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SLESD5Z5C"
-			(at 476.25 321.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 476.25 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 476.25 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 476.25 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "81804b29-0c46-427e-adc4-2604436a1089")
-		)
-		(pin "1"
-			(uuid "7d178234-2dbc-4f08-ad6f-6fa0edb7d725")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D9")
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -51700,7 +51633,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c72dddba-0a46-49c4-ace3-7b98350bf3bb")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR068"
 			(at 558.8 154.94 0)
 			(effects
 				(font
@@ -51750,7 +51683,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR067")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -51765,7 +51698,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c7604b52-21f4-4713-bff0-516a80dd0d40")
-		(property "Reference" "#FLG010"
+		(property "Reference" "#FLG011"
 			(at 134.62 325.755 0)
 			(effects
 				(font
@@ -51815,7 +51748,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#FLG010")
+					(reference "#FLG011")
 					(unit 1)
 				)
 			)
@@ -51900,7 +51833,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c8e52e99-6976-4f2d-905c-4202759ad736")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR041"
 			(at 114.3 90.17 0)
 			(effects
 				(font
@@ -51950,7 +51883,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR040")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -52033,7 +51966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ca2987ce-9dc7-4f0d-adeb-14c280b03866")
-		(property "Reference" "#FLG011"
+		(property "Reference" "#FLG09"
 			(at 109.22 325.755 0)
 			(effects
 				(font
@@ -52083,7 +52016,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#FLG011")
+					(reference "#FLG09")
 					(unit 1)
 				)
 			)
@@ -52368,7 +52301,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdcb512d-1143-4761-955f-8c5705043640")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR051"
 			(at 255.27 114.3 0)
 			(effects
 				(font
@@ -52418,7 +52351,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR050")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -52433,7 +52366,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ce9336d5-9fbf-4376-893c-28dcba4d784c")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR0111"
 			(at 207.01 245.11 0)
 			(effects
 				(font
@@ -52483,7 +52416,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0110")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -52498,7 +52431,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cec80ce6-35b6-4286-82ee-d135b2aec7a6")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR079"
 			(at 86.36 179.07 0)
 			(effects
 				(font
@@ -52548,7 +52481,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR078")
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
@@ -52632,7 +52565,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf3ee1d0-7bbc-4bcb-a25b-a9aea0b14aa0")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR055"
 			(at 29.21 134.62 0)
 			(effects
 				(font
@@ -52682,7 +52615,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR054")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -52994,7 +52927,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d2620d68-b11a-4b39-890c-4bea3874c219")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR040"
 			(at 106.68 90.17 0)
 			(effects
 				(font
@@ -53044,7 +52977,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR039")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -53128,7 +53061,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d2b6dd13-ab66-4daf-9f57-d7085d326dc7")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR084"
 			(at 198.12 182.88 0)
 			(effects
 				(font
@@ -53178,7 +53111,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR083")
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -53193,7 +53126,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d307ef3d-4f66-49ae-9c56-1d497ce0a178")
-		(property "Reference" "#PWR0141"
+		(property "Reference" "#PWR0142"
 			(at 21.59 288.29 0)
 			(effects
 				(font
@@ -53243,7 +53176,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0141")
+					(reference "#PWR0142")
 					(unit 1)
 				)
 			)
@@ -53459,7 +53392,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d6784443-09e2-4246-a75d-eff36232b061")
-		(property "Reference" "#PWR098"
+		(property "Reference" "#PWR099"
 			(at 86.36 223.52 0)
 			(effects
 				(font
@@ -53509,7 +53442,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR098")
+					(reference "#PWR099")
 					(unit 1)
 				)
 			)
@@ -53807,7 +53740,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d998316a-4731-496c-b877-c07ceae31fff")
-		(property "Reference" "#PWR0153"
+		(property "Reference" "#PWR0154"
 			(at 49.53 304.8 0)
 			(effects
 				(font
@@ -53857,7 +53790,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0153")
+					(reference "#PWR0154")
 					(unit 1)
 				)
 			)
@@ -53872,7 +53805,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da645af0-61ef-4979-96aa-ac823023a2fa")
-		(property "Reference" "#PWR0140"
+		(property "Reference" "#PWR0141"
 			(at 92.71 284.48 0)
 			(effects
 				(font
@@ -53922,7 +53855,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0140")
+					(reference "#PWR0141")
 					(unit 1)
 				)
 			)
@@ -53938,7 +53871,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dafc6ea1-1a9c-410e-95fa-43692a651b54")
-		(property "Reference" "#PWR0138"
+		(property "Reference" "#PWR0139"
 			(at 551.18 280.67 0)
 			(effects
 				(font
@@ -53988,7 +53921,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0138")
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -54192,6 +54125,73 @@
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
 					(reference "C66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 554.99 322.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "de1d6721-aa5b-427f-99e7-283474e5a33e")
+		(property "Reference" "D12"
+			(at 554.99 323.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PESD5V0U1BB"
+			(at 554.99 327.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 554.99 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 554.99 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 554.99 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8ab9cbf8-bdea-48a9-b728-a948b40bfa56")
+		)
+		(pin "2"
+			(uuid "526d4e74-3195-40cc-832e-f04d80fbddd3")
+		)
+		(instances
+			(project "VECTRON_V1"
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -54677,7 +54677,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e45ccfd6-c971-4648-b62b-ed7c3bff5db7")
-		(property "Reference" "#PWR0154"
+		(property "Reference" "#PWR0155"
 			(at 121.92 304.8 0)
 			(effects
 				(font
@@ -54727,7 +54727,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0154")
+					(reference "#PWR0155")
 					(unit 1)
 				)
 			)
@@ -55150,7 +55150,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e9b14756-6305-4f64-b4a4-4ff0bf98f760")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR067"
 			(at 549.91 154.94 0)
 			(effects
 				(font
@@ -55200,7 +55200,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR066")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -55292,7 +55292,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb66db6b-9964-449f-b8ef-0018e602db88")
-		(property "Reference" "#PWR0117"
+		(property "Reference" "#PWR0118"
 			(at 482.6 250.19 0)
 			(effects
 				(font
@@ -55342,7 +55342,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0117")
+					(reference "#PWR0118")
 					(unit 1)
 				)
 			)
@@ -55426,7 +55426,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec0f2bef-4bac-4d22-8238-62fb19ccbb49")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR083"
 			(at 570.23 182.88 0)
 			(effects
 				(font
@@ -55476,7 +55476,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR082")
+					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -55491,7 +55491,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec4ff756-da98-4989-8400-93ec9b23f857")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR075"
 			(at 22.86 179.07 0)
 			(effects
 				(font
@@ -55541,7 +55541,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR074")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -55617,6 +55617,73 @@
 		)
 	)
 	(symbol
+		(lib_id "VECTRON_V1:ESD_DIODE")
+		(at 476.25 316.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eca9d23e-6cfc-4c6b-a443-1014675f97c1")
+		(property "Reference" "D9"
+			(at 476.25 316.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SLESD5Z5C"
+			(at 476.25 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 476.25 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 476.25 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 476.25 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c45c85c-32cc-4061-a4de-d50f856b5598")
+		)
+		(pin "2"
+			(uuid "f5eb7bf0-e21e-460d-9758-32a4da553ee0")
+		)
+		(instances
+			(project ""
+				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 299.72 252.73 0)
 		(unit 1)
@@ -55625,7 +55692,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ed77a8c7-cafd-4b87-8aae-30dd98db8e85")
-		(property "Reference" "#PWR0122"
+		(property "Reference" "#PWR0123"
 			(at 299.72 259.08 0)
 			(effects
 				(font
@@ -55675,7 +55742,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0122")
+					(reference "#PWR0123")
 					(unit 1)
 				)
 			)
@@ -55964,7 +56031,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2d9aab9-ec27-4dc8-adee-16ef6697db87")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR056"
 			(at 35.56 134.62 0)
 			(effects
 				(font
@@ -56014,7 +56081,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR055")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -56029,7 +56096,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f310f3a1-895a-48e5-8fde-6d0361ebddc9")
-		(property "Reference" "#PWR091"
+		(property "Reference" "#PWR092"
 			(at 323.85 212.09 0)
 			(effects
 				(font
@@ -56079,7 +56146,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR091")
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -56095,7 +56162,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f38c7dfa-7046-4b1e-8534-fde2af2f7398")
-		(property "Reference" "#PWR0161"
+		(property "Reference" "#PWR0162"
 			(at 45.72 323.85 0)
 			(effects
 				(font
@@ -56145,7 +56212,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0161")
+					(reference "#PWR0162")
 					(unit 1)
 				)
 			)
@@ -56296,7 +56363,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6148383-756c-4b8e-a81b-ff3341c3b1f5")
-		(property "Reference" "#PWR099"
+		(property "Reference" "#PWR0100"
 			(at 114.3 223.52 0)
 			(effects
 				(font
@@ -56346,7 +56413,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR099")
+					(reference "#PWR0100")
 					(unit 1)
 				)
 			)
@@ -56431,7 +56498,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f7f8e266-7ebe-43bd-ad75-6618cccb69a7")
-		(property "Reference" "#PWR0126"
+		(property "Reference" "#PWR0127"
 			(at 497.84 262.89 0)
 			(effects
 				(font
@@ -56481,7 +56548,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0126")
+					(reference "#PWR0127")
 					(unit 1)
 				)
 			)
@@ -56638,7 +56705,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb1a9116-2b34-488a-a69f-537853cb9f19")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR069"
 			(at 576.58 154.94 0)
 			(effects
 				(font
@@ -56688,7 +56755,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR068")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -56841,7 +56908,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fc51380e-1220-4c78-8dff-6c3963c92840")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR064"
 			(at 22.86 152.4 0)
 			(effects
 				(font
@@ -56891,7 +56958,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR063")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -56957,73 +57024,6 @@
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ESD_Diodes:ESD_DIODE")
-		(at 554.99 322.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fd67a058-b779-44c5-99b2-5ab300c322b3")
-		(property "Reference" "D12"
-			(at 554.99 323.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PESD5V0U1BB"
-			(at 554.99 327.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 554.99 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 554.99 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 554.99 322.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "eeb4d8ba-18c2-4a1d-8539-9ce79c7e4eed")
-		)
-		(pin "1"
-			(uuid "a86e9655-0f5a-4228-8c7d-f97e54366b48")
-		)
-		(instances
-			(project "VECTRON_V1"
-				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -57107,7 +57107,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe36d90d-c85d-41e5-81e1-cead521380e8")
-		(property "Reference" "#PWR0107"
+		(property "Reference" "#PWR0108"
 			(at 558.8 236.22 0)
 			(effects
 				(font
@@ -57157,7 +57157,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0107")
+					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -57172,7 +57172,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff630551-20be-4cfb-b66d-fd8565bd902c")
-		(property "Reference" "#PWR0146"
+		(property "Reference" "#PWR0147"
 			(at 554.99 292.1 0)
 			(effects
 				(font
@@ -57222,7 +57222,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0146")
+					(reference "#PWR0147")
 					(unit 1)
 				)
 			)
@@ -57237,7 +57237,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff688208-2b6f-4275-a109-99eaf361644b")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0133"
 			(at 114.3 267.97 0)
 			(effects
 				(font
@@ -57287,7 +57287,7 @@
 		(instances
 			(project "VECTRON_V1"
 				(path "/3a97c2c3-8896-4e96-9dcd-2b0d621182d7"
-					(reference "#PWR0132")
+					(reference "#PWR0133")
 					(unit 1)
 				)
 			)
