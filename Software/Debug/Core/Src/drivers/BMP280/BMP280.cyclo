@@ -1,0 +1,5 @@
+../Core/Src/drivers/BMP280/BMP280.c:8:26:readRegister	1
+../Core/Src/drivers/BMP280/BMP280.c:14:26:writeRegister	1
+../Core/Src/drivers/BMP280/BMP280.c:19:26:readCalibrationData	2
+../Core/Src/drivers/BMP280/BMP280.c:47:19:BMP280Init	7
+../Core/Src/drivers/BMP280/BMP280.c:86:19:BMP280ReadData	3

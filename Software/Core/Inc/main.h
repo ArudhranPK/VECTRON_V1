@@ -59,6 +59,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SDIO_DET_Pin GPIO_PIN_12
+#define SDIO_DET_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

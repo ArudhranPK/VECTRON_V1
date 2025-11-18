@@ -1,0 +1,123 @@
+#ifndef SRC_DRIVERS_LIS2MDL_LIS2MDL_H_
+#define SRC_DRIVERS_LIS2MDL_LIS2MDL_H_
+
+
+//	Imports
+#include "stm32f4xx_hal.h"
+
+
+// 	Constants
+#define LIS2MDL_I2C_ADDR	(0x1E << 1)
+
+
+#define LIS2MDL_OFFSET_X_REG_L_ADDR 0x45
+#define LIS2MDL_OFFSET_X_REG_H_ADDR 0x46
+
+
+#define LIS2MDL_OFFSET_Y_REG_L_ADDR 0x47
+#define LIS2MDL_OFFSET_Y_REG_H_ADDR 0x48
+
+
+#define LIS2MDL_OFFSET_Z_REG_L_ADDR 0x49
+#define LIS2MDL_OFFSET_Z_REG_H_ADDR 0x4A
+
+
+#define LIS2MDL_CHIP_ID_ADDR	0x4F
+#define LIS2MDL_CHIP_ID			0x40
+
+
+
+#define LIS2MDL_CFG_REG_A_ADDR	0x60
+
+#define LIS2MDL_COMP_TEMP_EN	(1  << 7)
+#define LIS2MDL_LP				(0  << 4)
+#define LIS2MDL_ODR				(0b01 << 2)
+#define LIS2MDL_MD				(0b00 << 0)
+
+#define	LIS2MDL_CFG_REG_A		(LIS2MDL_COMP_TEMP_EN | LIS2MDL_LP | LIS2MDL_ODR | LIS2MDL_MD)
+
+
+
+#define LIS2MDL_REBOOT_ADDR		0x60
+#define LIS2MDL_REBOOT			(1 << 6)
+
+
+
+#define LIS2MDL_SOFT_RST_ADDR	0x60
+#define LIS2MDL_SOFT_RST		(1 << 5)
+
+
+
+#define LIS2MDL_CFG_REG_B_ADDR		0x61
+
+#define LIS2MDL_OFF_CANC_ONE_SHOT	(0 << 4)
+#define LIS2MDL_INT_ON_DATAOFF		(0 << 3)
+#define LIS2MDL_SET_FREQ			(0 << 2)
+#define LIS2MDL_OFF_CANC			(1 << 1)
+#define LIS2MDL_LPF					(1 << 0)
+
+#define LIS2MDL_CFG_REG_B			(LIS2MDL_OFF_CANC_ONE_SHOT | LIS2MDL_INT_ON_DATAOFF | LIS2MDL_SET_FREQ | LIS2MDL_OFF_CANC | LIS2MDL_LPF)
+
+
+
+#define LIS2MDL_CFG_REG_C_ADDR	0x62
+
+#define LIS2MDL_INT_ON_PIN		(0 << 6)
+#define LIS2MDL_I2C_DIS			(0 << 5)
+#define LIS2MDL_BDU				(1 << 4)
+#define LIS2MDL_BLE				(0 << 3)
+#define LIS2MDL_4WSPI			(0 << 2)
+#define LIS2MDL_SELF_TEST		(0 << 1)
+#define LIS2MDL_DRDY_ON_PIN		(0 << 0)
+
+#define LIS2MDL_CFG_REG_C		(LIS2MDL_INT_ON_PIN | LIS2MDL_I2C_DIS | LIS2MDL_BDU | LIS2MDL_BLE | LIS2MDL_4WSPI | LIS2MDL_SELF_TEST | LIS2MDL_DRDY_ON_PIN)
+
+
+
+#define LIS2MDL_INT_CRTL_REG_ADDR	0x63
+
+#define LIS2MDL_XIEN	(0 << 7)
+#define LIS2MDL_YIEN	(0 << 6)
+#define LIS2MDL_ZIEN	(0 << 5)
+#define LIS2MDL_IEA		(0 << 2)
+#define LIS2MDL_IEL		(0 << 1)
+#define LIS2MDL_IEN		(0 << 0)
+
+#define LIS2MDL_INT_CRTL_REG (LIS2MDL_XIEN | LIS2MDL_YIEN | LIS2MDL_ZIEN | LIS2MDL_IEA | LIS2MDL_IEL | LIS2MDL_IEN)
+
+
+
+#define LIS2MDL_INT_SOURCE_REG_ADDR	0x64
+
+#define LIS2MDL_INT_THS_L_REG_ADDR	0x65
+#define LIS2MDL_INT_THS_H_REG_ADDR	0x66
+
+
+
+#define LIS2MDL_STATUS_REG_ADDR	0x67
+
+#define LIS2MDL_OUT_START_ADDR	0x68
+
+#define LIS2MDL_OUTX_L_REG_ADDR	0x68
+#define LIS2MDL_OUTX_H_REG_ADDR	0x69
+#define LIS2MDL_OUTY_L_REG_ADDR	0x6A
+#define LIS2MDL_OUTY_H_REG_ADDR	0x6B
+#define LIS2MDL_OUTZ_L_REG_ADDR	0x6C
+#define LIS2MDL_OUTZ_H_REG_ADDR	0x6D
+
+#define LIS2MDL_TEMP_OUT_L_REG_ADDR	0x6E
+#define LIS2MDL_TEMP_OUT_H_REG_ADDR	0x6F
+
+
+
+//	Type definition
+typedef struct {
+    I2C_HandleTypeDef *hi2c; // pointer to I2C handle
+} LIS2MDL_Handle_t;
+
+
+HAL_StatusTypeDef LIS2MDLInit(LIS2MDL_Handle_t *lis);
+HAL_StatusTypeDef LIS2MDLReadData(LIS2MDL_Handle_t *lis, float *mag_x, float *mag_y, float *mag_z, float *temperature);
+
+
+#endif /* SRC_DRIVERS_LIS2MDL_LIS2MDL_H_ */

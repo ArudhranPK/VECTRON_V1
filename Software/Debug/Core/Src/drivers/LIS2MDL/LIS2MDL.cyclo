@@ -1,0 +1,4 @@
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:4:26:readRegister	1
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:10:26:writeRegister	1
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:16:19:LIS2MDLInit	9
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:57:19:LIS2MDLReadData	2

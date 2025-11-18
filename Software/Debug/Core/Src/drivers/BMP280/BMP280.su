@@ -1,0 +1,5 @@
+../Core/Src/drivers/BMP280/BMP280.c:8:26:readRegister	40	static
+../Core/Src/drivers/BMP280/BMP280.c:14:26:writeRegister	40	static
+../Core/Src/drivers/BMP280/BMP280.c:19:26:readCalibrationData	40	static
+../Core/Src/drivers/BMP280/BMP280.c:47:19:BMP280Init	24	static
+../Core/Src/drivers/BMP280/BMP280.c:86:19:BMP280ReadData	64	static

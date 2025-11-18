@@ -1,0 +1,2 @@
+../Core/Src/drivers/NEO6M/NEO6M.c:7:19:NEO6MInit	1
+../Core/Src/drivers/NEO6M/NEO6M.c:16:19:NEO6MGetData	1

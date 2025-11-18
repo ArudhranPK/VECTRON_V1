@@ -8,7 +8,7 @@ Remember to make custom symbols
 ## **Software**
 
 ### Micro SD card (SDIO)
-- [ ] integration testing
+- [x] integration testing
 - [ ] Driver code
 
 ### SPI Flash (SPI)
@@ -29,18 +29,21 @@ Remember to make custom symbols
 
 ### BMP280 barometer (I2C)
 - [x] integration testing
-- [ ] Driver code
+- [x] Driver code
 
 ## **Hardware**
 
 Remeber to make custom footprints
 
-- [ ] Complete schematic fully
-- [ ] Check schematics (Find errors)
-- [ ] Check if Micro SD can be run by only 1 bit bus
+- [x] Complete schematic fully
+- [x] Check schematics (Find errors)
+- [x] Check if Micro SD can be run by only 1 bit bus
 - [ ] Check for simulations
 - [ ] Learn about Control Systems
 - [ ] Learn about Control Systems for rockets
 - [ ] Check for the Op-Amp and mosfet trigger and continuity
 - [ ] Check for the automatic switch from battery to usb
 - [ ] Check for the reverse polarity circuit is working or not
+
+
+
