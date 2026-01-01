@@ -29,7 +29,7 @@
 
 #define LIS2MDL_CFG_REG_A_ADDR	0x60
 
-#define LIS2MDL_COMP_TEMP_EN	(1  << 7)
+#define LIS2MDL_COMP_TEMP_EN	(0  << 7)
 #define LIS2MDL_LP				(0  << 4)
 #define LIS2MDL_ODR				(0b01 << 2)
 #define LIS2MDL_MD				(0b00 << 0)
@@ -53,7 +53,7 @@
 #define LIS2MDL_OFF_CANC_ONE_SHOT	(0 << 4)
 #define LIS2MDL_INT_ON_DATAOFF		(0 << 3)
 #define LIS2MDL_SET_FREQ			(0 << 2)
-#define LIS2MDL_OFF_CANC			(1 << 1)
+#define LIS2MDL_OFF_CANC			(0 << 1)
 #define LIS2MDL_LPF					(1 << 0)
 
 #define LIS2MDL_CFG_REG_B			(LIS2MDL_OFF_CANC_ONE_SHOT | LIS2MDL_INT_ON_DATAOFF | LIS2MDL_SET_FREQ | LIS2MDL_OFF_CANC | LIS2MDL_LPF)
@@ -113,11 +113,18 @@
 //	Type definition
 typedef struct {
     I2C_HandleTypeDef *hi2c; // pointer to I2C handle
+
+    uint8_t rawData[6];
+
+    float mag_x;
+    float mag_y;
+    float mag_z;
+
 } LIS2MDL_Handle_t;
 
 
 HAL_StatusTypeDef LIS2MDLInit(LIS2MDL_Handle_t *lis);
-HAL_StatusTypeDef LIS2MDLReadData(LIS2MDL_Handle_t *lis, float *mag_x, float *mag_y, float *mag_z, float *temperature);
-
+HAL_StatusTypeDef LIS2MDLReadRaw(LIS2MDL_Handle_t *lis);
+void LIS2MDLRawToData(LIS2MDL_Handle_t *lis);
 
 #endif /* SRC_DRIVERS_LIS2MDL_LIS2MDL_H_ */

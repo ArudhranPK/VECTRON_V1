@@ -80,12 +80,17 @@ typedef struct {
     int16_t  dig_P8;
     int16_t  dig_P9;
 
+    uint8_t rawData[6];
+
+    float temperature;
+    float pressure;
+
 } BMP280_Handle_t;
 
 
 //	Functions
 HAL_StatusTypeDef BMP280Init(BMP280_Handle_t *bmp);
-HAL_StatusTypeDef BMP280ReadData(BMP280_Handle_t *bmp, float *pressure, float *temperature);
-
+HAL_StatusTypeDef BMP280ReadRaw(BMP280_Handle_t *bmp);
+void BMP280RawToData(BMP280_Handle_t *bmp);
 
 #endif /* SRC_DRIVERS_BMP280_BMP280_H_ */

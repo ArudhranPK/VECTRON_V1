@@ -1,0 +1,4 @@
+../Core/Src/drivers/W25Q128JV/W25Q128JV.c:3:13:W25Q128JVWaitForReady	24	static
+../Core/Src/drivers/W25Q128JV/W25Q128JV.c:16:19:W25Q128JVInit	48	static
+../Core/Src/drivers/W25Q128JV/W25Q128JV.c:107:19:W25Q128JVWritePage	32	static
+../Core/Src/drivers/W25Q128JV/W25Q128JV.c:141:19:W25Q128JVCleanSlate	24	static

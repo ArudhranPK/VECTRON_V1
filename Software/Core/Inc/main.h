@@ -59,8 +59,19 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define FLASH_CS_Pin GPIO_PIN_4
+#define FLASH_CS_GPIO_Port GPIOA
+#define IMU_CS_Pin GPIO_PIN_4
+#define IMU_CS_GPIO_Port GPIOC
+#define IMU_INT_1_Pin GPIO_PIN_9
+#define IMU_INT_1_GPIO_Port GPIOE
+#define IMU_INT_1_EXTI_IRQn EXTI9_5_IRQn
+#define IMU_INT_2_Pin GPIO_PIN_10
+#define IMU_INT_2_GPIO_Port GPIOE
 #define SDIO_DET_Pin GPIO_PIN_12
 #define SDIO_DET_GPIO_Port GPIOE
+#define STATUS_LED_Pin GPIO_PIN_12
+#define STATUS_LED_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 

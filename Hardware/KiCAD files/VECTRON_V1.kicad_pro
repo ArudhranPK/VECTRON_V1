@@ -520,7 +520,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerber/",
+      "plot": "../Drawings/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "../Drawings/3D_PCB/VECTRON_V1.step",

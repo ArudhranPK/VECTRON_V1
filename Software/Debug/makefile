@@ -19,8 +19,14 @@ RM := rm -rf
 -include FATFS/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/drivers/W25Q128JV/subdir.mk
+-include Core/Src/drivers/SERVO/subdir.mk
 -include Core/Src/drivers/NEO6M/subdir.mk
+-include Core/Src/drivers/MICROSD/subdir.mk
 -include Core/Src/drivers/LIS2MDL/subdir.mk
+-include Core/Src/drivers/ISM330DHCX/subdir.mk
+-include Core/Src/drivers/DEBUGGING/subdir.mk
+-include Core/Src/drivers/BUZZER/subdir.mk
 -include Core/Src/drivers/BMP280/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -71,8 +77,8 @@ all: main-build
 main-build: VECTRON_V1.elf secondary-outputs
 
 # Tool invocations
-VECTRON_V1.elf VECTRON_V1.map: $(OBJS) $(USER_OBJS) C:\Users\arudhran\OneDrive\Documents\Projects\Sanjay\ rocket\VECTRON_V1\Software\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "VECTRON_V1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\arudhran\OneDrive\Documents\Projects\Sanjay rocket\VECTRON_V1\Software\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VECTRON_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+VECTRON_V1.elf VECTRON_V1.map: $(OBJS) $(USER_OBJS) C:\Users\micro\OneDrive\Documents\Projects\Sanjay\ rocket\VECTRON_V1\Software\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "VECTRON_V1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\micro\OneDrive\Documents\Projects\Sanjay rocket\VECTRON_V1\Software\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VECTRON_V1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

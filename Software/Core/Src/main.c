@@ -29,8 +29,18 @@
 #include <stdbool.h>
 #include <string.h>
 
+#include "drivers/ISM330DHCX/ISM330DHCX.h"
 #include "drivers/BMP280/BMP280.h"
 #include "drivers/LIS2MDL/LIS2MDL.h"
+#include "drivers/NEO6M/NEO6M.h"
+
+#include "drivers/SERVO/SERVO.h"
+#include "drivers/BUZZER/BUZZER.h"
+
+#include "drivers/W25Q128JV/W25Q128JV.h"
+#include "drivers/MICROSD/MICROSD.h"
+
+#include "drivers/DEBUGGING/DEBUGGING.h"
 
 /* USER CODE END Includes */
 
@@ -53,25 +63,48 @@
 ADC_HandleTypeDef hadc1;
 
 I2C_HandleTypeDef hi2c1;
+DMA_HandleTypeDef hdma_i2c1_rx;
+DMA_HandleTypeDef hdma_i2c1_tx;
 
 SD_HandleTypeDef hsd;
 
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
+DMA_HandleTypeDef hdma_spi1_tx;
+DMA_HandleTypeDef hdma_spi1_rx;
 
+TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
+typedef enum {
+    STATE_READING_BMP,
+    STATE_READING_LIS
+} I2CSequenceState_t;
 
+volatile I2CSequenceState_t I2CdmaState = STATE_READING_BMP;
+
+ISM330DHCX_Handle_t ISM330DHCX_Handler;
+BMP280_Handle_t BMP280_Handler;
+LIS2MDL_Handle_t LIS2MDL_Handler;
+NEO6M_Handle_t NEO6M_Handler;
+
+Buzzer_Handle_t Buzzer_Handler;
+
+W25Q128JV_Handle_t W25Q128JV_Handler;
+
+char output[1024];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SDIO_SD_Init(void);
 static void MX_SPI1_Init(void);
@@ -81,6 +114,7 @@ static void MX_USART2_UART_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -96,7 +130,8 @@ void i2cScanner(void)
 	char start[] = "Scan Start ...\r\n";
 	char stop[]  = "Scan Stop  ...\r\n";
 
-	HAL_UART_Transmit(&huart1, (uint8_t*)&start, strlen(start), HAL_MAX_DELAY);
+//	HAL_UART_Transmit(&huart1, (uint8_t*)&start, strlen(start), HAL_MAX_DELAY);
+	debugging(start);
 
 
 
@@ -106,11 +141,14 @@ void i2cScanner(void)
 		if(ret == HAL_OK)
 		{
 			sprintf(addr, "Found: 0x%02X\r\n", i);
-			HAL_UART_Transmit(&huart1, (uint8_t*)&addr, strlen(addr), HAL_MAX_DELAY);
+//			HAL_UART_Transmit(&huart1, (uint8_t*)&addr, strlen(addr), HAL_MAX_DELAY);
+			debugging(addr);
+
 		}
 	}
 
-	HAL_UART_Transmit(&huart1, (uint8_t*)&stop, strlen(stop), HAL_MAX_DELAY);
+//	HAL_UART_Transmit(&huart1, (uint8_t*)&stop, strlen(stop), HAL_MAX_DELAY);
+	debugging(stop);
 }
 
 
@@ -145,6 +183,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_I2C1_Init();
   MX_SDIO_SD_Init();
   MX_SPI1_Init();
@@ -156,132 +195,23 @@ int main(void)
   MX_TIM3_Init();
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
-  	i2cScanner();
-
-    BMP280_Handle_t bmpHandler;
-    bmpHandler.hi2c = &hi2c1;
-    bmpHandler.address = 0x76;
-
-    if(BMP280Init(&bmpHandler) == HAL_OK)
-    {
-  	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-  	  HAL_Delay(200);
-  	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-    }
-
-    LIS2MDL_Handle_t lisHandler;
-    lisHandler.hi2c = &hi2c1;
-
-    if(LIS2MDLInit(&lisHandler) == HAL_OK)
-    {
-    	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-    	HAL_Delay(200);
-    	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-    }
-    float pressure;
-    float bmpTemperature;
-
-    float mag_x;
-    float mag_y;
-    float mag_z;
-    float magTemperature;
-
-    char output[150];
-
-    FRESULT res;          // FatFS function result
-      FIL file;             // File object
-      UINT bytesread;       // File read count
-      char rtext[128];      // Buffer to store read data
-      char msg[64];
-
-      UINT byteswritten;    // File write count
-      char wtext[] = "Hello World\r\n"; // Text to write
-
-        // Mount SD Card
-        if (f_mount(&SDFatFS, SDPath, 1) == FR_OK)
-        {
-            // Open file for writing (create if not exists, overwrite if exists)
-            res = f_open(&file, "test.txt", FA_CREATE_ALWAYS | FA_WRITE);
-            if (res == FR_OK)
-            {
-                // Write data
-                res = f_write(&file, wtext, sizeof(wtext)-1, &byteswritten);
-                if ((res == FR_OK) && (byteswritten > 0))
-                {
-                    // Successfully written
-                	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-                }
-                f_close(&file); // Close file
-            }
-            else
-            {
-            	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET); // Error opening file
-            }
-        }
-        else
-        {
-        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET); // Error mounting SD
-        }
-
-      // Mount SD Card
-      if (f_mount(&SDFatFS, SDPath, 1) == FR_OK)
-      {
-          // Open file for reading
-          res = f_open(&file, "test.txt", FA_READ);
-          if (res == FR_OK)
-          {
-              memset(rtext, 0, sizeof(rtext));
-              res = f_read(&file, rtext, sizeof(rtext)-1, &bytesread);
-
-              if (res == FR_OK && bytesread > 0)
-              {
-                  // Send the file contents over UART3
-                  HAL_UART_Transmit(&huart1, (uint8_t*)rtext, bytesread, HAL_MAX_DELAY);
-                  HAL_UART_Transmit(&huart1, (uint8_t*)"\r\n", 2, HAL_MAX_DELAY);
-                  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET); // Indicate success
-              }
-              else
-              {
-                  sprintf(msg, "Read error: %d\r\n", res);
-                  HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-                  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-              }
-              f_close(&file);
-          }
-          else
-          {
-              sprintf(msg, "Open error: %d\r\n", res);
-              HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-          }
-      }
-      else
-      {
-          sprintf(msg, "Mount error\r\n");
-          HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-          HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-      }
+  W25Q128JV_Handler.hspi = &hspi2;
+  W25Q128JV_Handler.CsPort = FLASH_CS_GPIO_Port;
+  W25Q128JV_Handler.CsPin = FLASH_CS_Pin;
 
 
+  W25Q128JVInit(&W25Q128JV_Handler);
+
+  W25Q128JVCleanSlate(&W25Q128JV_Handler);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  BMP280ReadData(&bmpHandler, &pressure, &bmpTemperature);
-	  LIS2MDLReadData(&lisHandler, &mag_x, &mag_y, &mag_z, &magTemperature);
-	  sprintf(output, "Temperature : %.2f °C\r\nPressure : %.2f Pa\r\n\r\n"
-			  	  	  "Temperature : %.2f °C\r\nGauss X : %.4f Gs\r\nGauss Y : %.4f Gs\r\nGauss Z : %.4f Gs\r\n\r\n"
-			  	  	  , bmpTemperature, pressure , magTemperature, mag_x, mag_y, mag_z);
-
-	  HAL_UART_Transmit(&huart1, (uint8_t*)&output, strlen(output), HAL_MAX_DELAY);
-
-
-
-	  HAL_Delay(500);
 
     /* USER CODE END WHILE */
 
@@ -442,7 +372,7 @@ static void MX_SDIO_SD_Init(void)
   hsd.Init.ClockPowerSave = SDIO_CLOCK_POWER_SAVE_DISABLE;
   hsd.Init.BusWide = SDIO_BUS_WIDE_1B;
   hsd.Init.HardwareFlowControl = SDIO_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd.Init.ClockDiv = 4;
+  hsd.Init.ClockDiv = 8;
   /* USER CODE BEGIN SDIO_Init 2 */
 
   /* USER CODE END SDIO_Init 2 */
@@ -472,7 +402,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -526,6 +456,86 @@ static void MX_SPI2_Init(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 167;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 65535;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_OC_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TOGGLE;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+  if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_TIMING;
+  if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+  HAL_TIM_MspPostInit(&htim1);
+
+}
+
+/**
   * @brief TIM2 Initialization Function
   * @param None
   * @retval None
@@ -545,11 +555,11 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 0;
+  htim2.Init.Prescaler = 83;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 4294967295;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
     Error_Handler();
@@ -616,7 +626,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 0;
+  htim3.Init.Prescaler = 83;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 65535;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -649,14 +659,6 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
   }
@@ -716,7 +718,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -734,6 +736,35 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  /* DMA1_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -746,20 +777,40 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : PE4 PE5 */
-  GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(IMU_CS_GPIO_Port, IMU_CS_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(STATUS_LED_GPIO_Port, STATUS_LED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : FLASH_CS_Pin */
+  GPIO_InitStruct.Pin = FLASH_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(FLASH_CS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : IMU_CS_Pin */
+  GPIO_InitStruct.Pin = IMU_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(IMU_CS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : IMU_INT_1_Pin IMU_INT_2_Pin */
+  GPIO_InitStruct.Pin = IMU_INT_1_Pin|IMU_INT_2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SDIO_DET_Pin */
@@ -768,12 +819,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SDIO_DET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PD12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12;
+  /*Configure GPIO pin : STATUS_LED_Pin */
+  GPIO_InitStruct.Pin = STATUS_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+  HAL_GPIO_Init(STATUS_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
@@ -781,7 +836,106 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == IMU_INT_1_Pin)
+  {
+    ISM330DHCXReadRaw(&ISM330DHCX_Handler);
+  }
+}
 
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+  if (hspi->Instance == SPI1)
+  {
+
+      HAL_GPIO_WritePin(ISM330DHCX_Handler.CSPort, ISM330DHCX_Handler.CSPin, GPIO_PIN_SET);
+      ISM330DHCXRawToData(&ISM330DHCX_Handler);
+      sprintf(output, "Temp: %.2f C | Accel: %.2f %.2f %.2f g | Gyro: %.2f %.2f %.2f dps\r\n",
+              ISM330DHCX_Handler.temperature,
+              ISM330DHCX_Handler.accel_g_x,
+              ISM330DHCX_Handler.accel_g_y,
+              ISM330DHCX_Handler.accel_g_z,
+              ISM330DHCX_Handler.gyro_dps_x,
+              ISM330DHCX_Handler.gyro_dps_y,
+              ISM330DHCX_Handler.gyro_dps_z);
+      debugging(output);
+  }
+}
+
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+    if (hi2c->Instance == I2C1)
+    {
+        if (I2CdmaState == STATE_READING_BMP)
+        {
+            // BMP finished! Now start LIS2MDL immediately
+            LIS2MDLReadRaw(&LIS2MDL_Handler);
+            I2CdmaState = STATE_READING_LIS;
+
+            BMP280RawToData(&BMP280_Handler);
+
+        }
+        else if (I2CdmaState == STATE_READING_LIS)
+        {
+            // LIS finished! The sequencing chain is done.
+            I2CdmaState = STATE_READING_BMP;
+
+            LIS2MDLRawToData(&LIS2MDL_Handler);
+        }
+    }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART2)
+    {
+        if (NEO6M_Handler.tempByte == '$')
+        {
+            /* FOUND IT! Sync detected. */
+
+            // 1. Manually place '$' at the start of the buffer
+            NEO6M_Handler.rawBuffer[0] = '$';
+
+            // 2. Switch to DMA immediately to catch the rest of the sentence.
+            // Notice: We point to &rawbuffer[1] because index 0 is already filled.
+            // We reduce size by 1.
+            HAL_UARTEx_ReceiveToIdle_DMA(NEO6M_Handler.huart, &NEO6M_Handler.rawBuffer[1], 511);
+        }
+        else
+        {
+            /* Garbage data (noise or middle of sentence). Keep Hunting. */
+            HAL_UART_Receive_IT(NEO6M_Handler.huart, &NEO6M_Handler.tempByte, 1);
+        }
+    }
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+    if (huart->Instance == USART2)
+    {
+        /* DMA has stopped receiving. We now have a full batch. */
+
+        // The 'Size' argument is how many bytes DMA transferred.
+        // Since we manually added '$' at index 0, total length is Size + 1.
+        uint16_t TotalLen = Size + 1;
+
+        // 1. Null terminate for safety
+        NEO6M_Handler.rawBuffer[TotalLen] = '\0';
+
+        // 2. Process the Clean Data
+
+        NEO6MRawToData(&NEO6M_Handler);
+
+//        sprintf(output, "%s", NEO6M_Handler.rawBuffer);
+//        debugging(output);
+
+
+        // 3. Reset logic: Go back to "Hunting" for the next '$'
+        // We do NOT restart DMA here. We restart the single-byte Interrupt.
+        HAL_UART_Receive_IT(NEO6M_Handler.huart, &NEO6M_Handler.tempByte, 1);
+    }
+}
 /* USER CODE END 4 */
 
 /**

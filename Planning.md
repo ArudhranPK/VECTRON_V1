@@ -12,20 +12,20 @@ Remember to make custom symbols
 - [ ] Driver code
 
 ### SPI Flash (SPI)
-- [ ] integration testing
+- [x] integration testing
 - [ ] Driver code
 
 ### ISM330DHCX IMU (SPI)(DMA)
-- [ ] Integration testing
-- [ ] Driver code
+- [x] Integration testing
+- [x] Driver code
 
 ### LIS2MDL magnetometer (I2C)
-- [ ] integration testing
-- [ ] Driver code
+- [x] integration testing
+- [x] Driver code
 
 ### NEO-6M GPS (UART)
-- [ ] integration testing
-- [ ] Driver code
+- [x] integration testing
+- [x] Driver code
 
 ### BMP280 barometer (I2C)
 - [x] integration testing

@@ -1,0 +1,3 @@
+../Core/Src/drivers/BUZZER/BUZZER.c:3:19:BuzzerInit	1
+../Core/Src/drivers/BUZZER/BUZZER.c:9:19:BuzzerBeep	1
+../Core/Src/drivers/BUZZER/BUZZER.c:17:19:BuzzerPlayNote	1
