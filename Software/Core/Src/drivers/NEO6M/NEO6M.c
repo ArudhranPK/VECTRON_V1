@@ -40,12 +40,13 @@ HAL_StatusTypeDef NEO6MInit(NEO6M_Handle_t *neo)
 
 
 
-
 HAL_StatusTypeDef NEO6MReadRaw(NEO6M_Handle_t *neo)
 {
     if(HAL_UART_Receive_IT(neo->huart, &neo->tempByte, 1) != HAL_OK) return HAL_ERROR;
 	return HAL_OK;
 }
+
+
 
 HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
 {
@@ -55,7 +56,7 @@ HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
     char *buffer = (char *)neo->rawBuffer;
 
     // =========================================================
-    // 1. Parse GPRMC (Best for Location, Speed, Date)
+    // 1. Parse GPRMC (Best for Location, Status)
     // =========================================================
     char *rmc = strstr(buffer, "$GPRMC");
 
@@ -63,7 +64,6 @@ HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
     {
         char *p = rmc;
 
-        // Use a loop/macro approach or simple checks to move safely
         // 1. Time
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
         float time = Get_Float(p);
@@ -81,40 +81,45 @@ HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
         double lat_raw = Get_Double(p);
 
-        // 4. N/S
+        // 4. N/S (Using local variable since struct member is removed)
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
-        neo->LatSide = *p;
+        char tempLatSide = *p; // neo->LatSide = *p; 
 
         // 5. Longitude
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
         double lon_raw = Get_Double(p);
 
-        // 6. E/W
+        // 6. E/W (Using local variable since struct member is removed)
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
-        neo->LonSide = *p;
+        char tempLonSide = *p; // neo->LonSide = *p;
 
-        // --- MATH ---
+        // --- MATH (Encode Direction into Value) ---
         neo->Latitude = NMEA_To_Decimal(lat_raw);
-        if (neo->LatSide == 'S') neo->Latitude *= -1;
+        if (tempLatSide == 'S') neo->Latitude *= -1;
 
         neo->Longitude = NMEA_To_Decimal(lon_raw);
-        if (neo->LonSide == 'W') neo->Longitude *= -1;
+        if (tempLonSide == 'W') neo->Longitude *= -1;
 
-        // 7. Speed
+        // --- OPTIMIZATION: STOP PARSING HERE ---
+        // Since Speed, Course, and Date are at the end of the string
+        // and you don't need them, we simply stop processing.
+        
+        /* // 7. Speed
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
-        neo->SpeedKnots = Get_Float(p);
-        neo->SpeedKm = neo->SpeedKnots * 1.852f;
+        // neo->SpeedKnots = Get_Float(p);
+        // neo->SpeedKm = neo->SpeedKnots * 1.852f;
 
         // 8. Course
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
-        neo->Course = Get_Float(p);
+        // neo->Course = Get_Float(p);
 
         // 9. Date
         p = strchr(p, ','); if (p) p++; else return HAL_ERROR;
-        int date = atoi(p);
-        neo->Day = date / 10000;
-        neo->Month = (date % 10000) / 100;
-        neo->Year = date % 100;
+        // int date = atoi(p);
+        // neo->Day = date / 10000;
+        // neo->Month = (date % 10000) / 100;
+        // neo->Year = date % 100;
+        */
     }
 
     // =========================================================
@@ -126,7 +131,7 @@ HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
     {
         char *p = gga;
 
-        // Skip first 6 commas safely
+        // Skip first 6 commas safely to get to Fix Quality
         for(int i=0; i<6; i++) {
             p = strchr(p, ',');
             if (p) p++;
@@ -150,6 +155,9 @@ HAL_StatusTypeDef NEO6MRawToData(NEO6M_Handle_t *neo)
             // Altitude
             p = strchr(p, ','); if (p) p++;
             neo->Altitude = Get_Float(p);
+            
+            // Note: PDOP, VDOP, and FixMode require parsing $GPGSA 
+            // which is not included here, so those struct members will stay 0.
         }
     }
 

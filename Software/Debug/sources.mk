@@ -22,16 +22,19 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+Core/Src \
+Core/Src/drivers/ADC \
 Core/Src/drivers/BMP280 \
 Core/Src/drivers/BUZZER \
 Core/Src/drivers/DEBUGGING \
 Core/Src/drivers/ISM330DHCX \
+Core/Src/drivers/KALMAN \
 Core/Src/drivers/LIS2MDL \
 Core/Src/drivers/MICROSD \
 Core/Src/drivers/NEO6M \
 Core/Src/drivers/SERVO \
 Core/Src/drivers/W25Q128JV \
-Core/Src \
+Core/Src/drivers/WS2812 \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 FATFS/App \

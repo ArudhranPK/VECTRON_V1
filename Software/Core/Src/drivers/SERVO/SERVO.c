@@ -11,12 +11,14 @@ void Servo_Init_LUT(void) {
 HAL_StatusTypeDef ServoInit(Servo_Handle_t *servo)
 {
 	if(HAL_TIM_PWM_Start(servo->htim, servo->TIM_CHANNEL) != HAL_OK) return HAL_ERROR;
+	ServoSetAngle(servo, 0);
 	return HAL_OK;
 }
 
 HAL_StatusTypeDef ServoSetAngle(Servo_Handle_t *servo, int16_t angle)
 {
 	if (angle > 180) angle = 180;
+	servo->angle = angle;
 	__HAL_TIM_SET_COMPARE(servo->htim, servo->TIM_CHANNEL, servo_angle_values[angle]);
 	return HAL_OK;
 }

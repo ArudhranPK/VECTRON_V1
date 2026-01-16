@@ -1,4 +1,4 @@
-../Core/Src/drivers/BMP280/BMP280.c:5:26:readCalibrationData	2
-../Core/Src/drivers/BMP280/BMP280.c:33:19:BMP280Init	7
-../Core/Src/drivers/BMP280/BMP280.c:72:19:BMP280ReadRaw	2
-../Core/Src/drivers/BMP280/BMP280.c:80:6:BMP280RawToData	2
+../Core/Src/drivers/BMP280/BMP280.c:4:26:readCalibrationData	2
+../Core/Src/drivers/BMP280/BMP280.c:44:19:BMP280Init	7
+../Core/Src/drivers/BMP280/BMP280.c:89:19:BMP280ReadRaw	2
+../Core/Src/drivers/BMP280/BMP280.c:99:6:BMP280RawToData	2

@@ -53,13 +53,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- ../Core/Src/drivers/ISM330DHCX/ISM330DHCX.h \
+ ../Core/Src/FLIGHT.h ../Core/Src/drivers/ISM330DHCX/ISM330DHCX.h \
  ../Core/Src/drivers/BMP280/BMP280.h \
  ../Core/Src/drivers/LIS2MDL/LIS2MDL.h ../Core/Src/drivers/NEO6M/NEO6M.h \
- ../Core/Src/drivers/SERVO/SERVO.h ../Core/Src/drivers/BUZZER/BUZZER.h \
+ ../Core/Src/drivers/ADC/ADC.h ../Core/Src/drivers/SERVO/SERVO.h \
+ ../Core/Src/drivers/BUZZER/BUZZER.h ../Core/Src/drivers/WS2812/WS2812.h \
  ../Core/Src/drivers/W25Q128JV/W25Q128JV.h \
+ ../Core/Src/drivers/W25Q128JV/../../FLIGHT.h \
  ../Core/Src/drivers/MICROSD/MICROSD.h \
- ../Core/Src/drivers/DEBUGGING/DEBUGGING.h
+ ../Core/Src/drivers/DEBUGGING/DEBUGGING.h \
+ ../Core/Src/drivers/KALMAN/KALMAN.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -120,12 +123,17 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+../Core/Src/FLIGHT.h:
 ../Core/Src/drivers/ISM330DHCX/ISM330DHCX.h:
 ../Core/Src/drivers/BMP280/BMP280.h:
 ../Core/Src/drivers/LIS2MDL/LIS2MDL.h:
 ../Core/Src/drivers/NEO6M/NEO6M.h:
+../Core/Src/drivers/ADC/ADC.h:
 ../Core/Src/drivers/SERVO/SERVO.h:
 ../Core/Src/drivers/BUZZER/BUZZER.h:
+../Core/Src/drivers/WS2812/WS2812.h:
 ../Core/Src/drivers/W25Q128JV/W25Q128JV.h:
+../Core/Src/drivers/W25Q128JV/../../FLIGHT.h:
 ../Core/Src/drivers/MICROSD/MICROSD.h:
 ../Core/Src/drivers/DEBUGGING/DEBUGGING.h:
+../Core/Src/drivers/KALMAN/KALMAN.h:

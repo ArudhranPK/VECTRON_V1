@@ -1,4 +1,4 @@
-../Core/Src/drivers/BMP280/BMP280.c:5:26:readCalibrationData	56	static
-../Core/Src/drivers/BMP280/BMP280.c:33:19:BMP280Init	40	static
-../Core/Src/drivers/BMP280/BMP280.c:72:19:BMP280ReadRaw	24	static
-../Core/Src/drivers/BMP280/BMP280.c:80:6:BMP280RawToData	48	static
+../Core/Src/drivers/BMP280/BMP280.c:4:26:readCalibrationData	56	static
+../Core/Src/drivers/BMP280/BMP280.c:44:19:BMP280Init	40	static
+../Core/Src/drivers/BMP280/BMP280.c:89:19:BMP280ReadRaw	24	static
+../Core/Src/drivers/BMP280/BMP280.c:99:6:BMP280RawToData	64	static

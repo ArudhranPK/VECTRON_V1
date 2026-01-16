@@ -104,20 +104,14 @@ HAL_StatusTypeDef W25Q128JVInit(W25Q128JV_Handle_t *flash)
 }
 
 
-HAL_StatusTypeDef W25Q128JVWritePage(W25Q128JV_Handle_t *flash)
+HAL_StatusTypeDef W25Q128JVWritePage(W25Q128JV_Handle_t *flash, FlightDataHandler_t *data)
 {
     uint8_t tempTxBuffer[4] = {};
-
-    //  copying values to buffer from flight_Data data type
-
-    //  writing buffer to flash
-    W25Q128JVWaitForReady(flash);
 
     tempTxBuffer[0] = CMD_WRITE_ENABLE;
     HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_RESET);
     HAL_SPI_Transmit(flash->hspi, tempTxBuffer, 1, HAL_MAX_DELAY);
     HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_SET);
-
 
     tempTxBuffer[0] = CMD_PAGE_PROGRAM;
     tempTxBuffer[1] = flash->currentPage >> 8;
@@ -126,9 +120,30 @@ HAL_StatusTypeDef W25Q128JVWritePage(W25Q128JV_Handle_t *flash)
 
     HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_RESET);
     HAL_SPI_Transmit(flash->hspi, tempTxBuffer, 4, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(flash->hspi, (uint8_t*)data, 119, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_SET);
 
-    uint8_t output[12] = "Hello World";
-    HAL_SPI_Transmit(flash->hspi, (uint8_t*)(output), 12, HAL_MAX_DELAY);
+    flash->currentOffset += 128;
+    if(!flash->currentOffset) flash->currentPage += 1;
+
+    W25Q128JVWaitForReady(flash);
+
+    return HAL_OK;
+}
+
+HAL_StatusTypeDef W25Q128JVReadPage(W25Q128JV_Handle_t *flash, FlightDataHandler_t *data)
+{
+    // 1. Prepare Command (0x03 = Read Data) and Address
+    uint8_t tempTxBuffer[4] = {};
+
+    tempTxBuffer[0] = CMD_READ_DATA;
+    tempTxBuffer[1] = flash->currentPage >> 8;
+    tempTxBuffer[2] = flash->currentPage;
+    tempTxBuffer[3] = flash->currentOffset;
+
+    HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_RESET);
+    HAL_SPI_Transmit(flash->hspi, tempTxBuffer, 4, HAL_MAX_DELAY);
+    HAL_SPI_Receive(flash->hspi, (uint8_t*)data, 119, HAL_MAX_DELAY);
     HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_SET);
 
     flash->currentOffset += 128;
@@ -137,10 +152,8 @@ HAL_StatusTypeDef W25Q128JVWritePage(W25Q128JV_Handle_t *flash)
     return HAL_OK;
 }
 
-
 HAL_StatusTypeDef W25Q128JVCleanSlate(W25Q128JV_Handle_t *flash)
 {
-    W25Q128JVWaitForReady(flash);
 
     uint8_t tempTxBuffer = CMD_WRITE_ENABLE;
     HAL_GPIO_WritePin(flash->CsPort, flash->CsPin, GPIO_PIN_RESET);

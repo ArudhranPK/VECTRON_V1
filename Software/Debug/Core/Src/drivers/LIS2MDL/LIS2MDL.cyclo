@@ -1,3 +1,3 @@
-../Core/Src/drivers/LIS2MDL/LIS2MDL.c:4:19:LIS2MDLInit	9
-../Core/Src/drivers/LIS2MDL/LIS2MDL.c:44:19:LIS2MDLReadRaw	2
-../Core/Src/drivers/LIS2MDL/LIS2MDL.c:51:6:LIS2MDLRawToData	1
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:3:19:LIS2MDLInit	9
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:56:19:LIS2MDLReadRaw	2
+../Core/Src/drivers/LIS2MDL/LIS2MDL.c:66:6:LIS2MDLRawToData	1

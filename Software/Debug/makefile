@@ -19,15 +19,18 @@ RM := rm -rf
 -include FATFS/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/drivers/WS2812/subdir.mk
 -include Core/Src/drivers/W25Q128JV/subdir.mk
 -include Core/Src/drivers/SERVO/subdir.mk
 -include Core/Src/drivers/NEO6M/subdir.mk
 -include Core/Src/drivers/MICROSD/subdir.mk
 -include Core/Src/drivers/LIS2MDL/subdir.mk
+-include Core/Src/drivers/KALMAN/subdir.mk
 -include Core/Src/drivers/ISM330DHCX/subdir.mk
 -include Core/Src/drivers/DEBUGGING/subdir.mk
 -include Core/Src/drivers/BUZZER/subdir.mk
 -include Core/Src/drivers/BMP280/subdir.mk
+-include Core/Src/drivers/ADC/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
 

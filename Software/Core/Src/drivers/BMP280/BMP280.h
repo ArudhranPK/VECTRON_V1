@@ -4,7 +4,7 @@
 
 //	Imports
 #include "stm32f4xx_hal.h"
-
+#include <math.h>
 
 // Constants
 //#define BMP280_I2C_ADDR 		(0x76 << 1)		//	Can be changeable
@@ -60,6 +60,10 @@
 
 #define BMP280_CALIBRATION_START_ADDR	0x88
 
+#define SEA_LEVEL_PRESSURE 101325
+#define PRESSURE_EXPONENT 0.1903
+#define HEIGHT_FACTOR 44330.0
+
 
 //	Type definition
 typedef struct {
@@ -84,6 +88,7 @@ typedef struct {
 
     float temperature;
     float pressure;
+    float altitude;
 
 } BMP280_Handle_t;
 
